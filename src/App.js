@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { products } from './products';
 import logo from './logo.svg';
 import './App.css';
 import Nav from './components/Nav';
@@ -15,7 +16,8 @@ const App = () => {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop" element={<Shop products={products} />} />
+          {/* <Route path="/checkout" element={<Checkout cart={cart} />} /> */}
         </Routes>
       </div>
     </BrowserRouter>
