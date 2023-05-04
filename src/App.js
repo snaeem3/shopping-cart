@@ -13,7 +13,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav />
+        <Nav homePath="/" shopPath="/shop" />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop products={products} />} />
