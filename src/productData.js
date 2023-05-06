@@ -1,4 +1,4 @@
-export const products = [
+export const productData = [
   {
     name: 'A',
     price: 1.11,

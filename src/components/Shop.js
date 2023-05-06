@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import uniqid from 'uniqid';
 import Product from './Product';
 
 const Shop = (props) => {
-  const { products } = props;
+  const { products, addItemToCart } = props;
 
   const [currentCategory, setCurrentCategory] = useState('All');
 
@@ -57,6 +58,7 @@ const ProductGrid = (props) => {
     <div className="product-grid">
       {items.map((item) => (
         <Product
+          key={item.id}
           name={item.name}
           price={item.price}
           category={item.category}
