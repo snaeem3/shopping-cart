@@ -18,12 +18,15 @@ const Shop = (props) => {
       : products.filter((item) => item.category === currentCategory);
 
   function getUniqueValues(array) {
+    if (!array) return [];
+
     const uniqueValues = array.reduce((values, obj) => {
       if (!values.includes(obj.category)) {
         values.push(obj.category);
       }
       return values;
     }, []);
+
     return uniqueValues;
   }
 
@@ -56,7 +59,7 @@ const ProductGrid = (props) => {
   console.table(items);
   return (
     <div className="product-grid">
-      {items.map((item) => (
+      {items?.map((item) => (
         <Product
           key={item.id}
           productId={item.id}

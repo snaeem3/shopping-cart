@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-// import { productData, getObjectById } from '../productData';
 
 const ProductDetail = (props) => {
   const { productName } = useParams();
