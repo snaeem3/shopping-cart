@@ -59,6 +59,7 @@ const ProductGrid = (props) => {
       {items.map((item) => (
         <Product
           key={item.id}
+          productId={item.id}
           name={item.name}
           price={item.price}
           category={item.category}

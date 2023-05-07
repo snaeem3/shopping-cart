@@ -1,3 +1,5 @@
+import uniqid from 'uniqid';
+
 export const productData = [
   {
     name: 'A',
@@ -5,6 +7,7 @@ export const productData = [
     category: 'Category A',
     inStock: true,
     imgSrc: null,
+    // id: uniqid(),
   },
   {
     name: 'B',
@@ -12,6 +15,7 @@ export const productData = [
     category: 'Category A',
     inStock: true,
     imgSrc: null,
+    // id: uniqid(),
   },
   {
     name: 'C',
@@ -19,6 +23,7 @@ export const productData = [
     category: 'Category B',
     inStock: true,
     imgSrc: null,
+    // id: uniqid(),
   },
   {
     name: 'D',
@@ -26,6 +31,7 @@ export const productData = [
     category: 'Category B',
     inStock: false,
     imgSrc: null,
+    // id: uniqid(),
   },
 ];
 // consider sorting products into categories then list name, price, img

@@ -19,18 +19,20 @@ const App = () => {
   }));
   const numCartProducts = cart.length; // number of unique products in cart
 
-  const addItemToCart = (productID, quantity = 1) => {
+  const addItemToCart = (productName, quantity = 1) => {
     const updatedCart = [...cart];
 
     // Check if the product ID already exists in the cart
-    const index = updatedCart.findIndex((item) => item.id === productID);
+    const index = updatedCart.findIndex(
+      (item) => item.productName === productName
+    );
 
     if (index !== -1) {
       // If the product ID already exists, update the quantity
       updatedCart[index].quantity += quantity;
     } else {
       // If the product ID doesn't exist, add a new item to the cart
-      updatedCart.push({ productID, quantity });
+      updatedCart.push({ productName, quantity });
     }
 
     setCart(updatedCart);
@@ -44,11 +46,17 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route
             path="/shop"
+            exact
             element={<Shop products={products} addItemToCart={addItemToCart} />}
           />
           <Route
-            path="/shop/:productId"
-            element={<ProductDetail addItemToCart={addItemToCart} />}
+            path="/shop/:productName"
+            element={
+              <ProductDetail
+                addItemToCart={addItemToCart}
+                products={products}
+              />
+            }
           />
           {/* <Route path="/checkout" element={<Checkout cart={cart} />} /> */}
         </Routes>
