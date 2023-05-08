@@ -45,6 +45,7 @@ const Sidebar = (props) => {
 
   return (
     <div className="sidebar">
+      <h2>All Products</h2>
       {categories.map((category) => (
         <h2 className="category-header" key={uniqid()}>
           {category}
@@ -56,19 +57,35 @@ const Sidebar = (props) => {
 
 const ProductGrid = (props) => {
   const { currentCategory, items } = props;
-  console.table(items);
+  const categories = [...new Set(items.map((item) => item.category))]; // get unique categories from items
+  console.log(categories);
+  // console.table(items);
   return (
     <div className="product-grid">
-      {items?.map((item) => (
-        <Product
-          key={item.id}
-          productId={item.id}
-          name={item.name}
-          price={item.price}
-          category={item.category}
-          inStock={item.inStock}
-          imgUrl={item.imgUrl}
-        />
+      {categories.map((category) => (
+        <div
+          key={category}
+          className={`category-container ${
+            category === currentCategory || category === 'all'
+              ? 'active'
+              : 'inactive'
+          }`}
+        >
+          <h2>{category}</h2>
+          {items
+            .filter((item) => item.category === category)
+            .map((item) => (
+              <Product
+                key={item.id}
+                productId={item.id}
+                name={item.name}
+                price={item.price}
+                category={item.category}
+                inStock={item.inStock}
+                imgUrl={item.imgUrl}
+              />
+            ))}
+        </div>
       ))}
     </div>
   );

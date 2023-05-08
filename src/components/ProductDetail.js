@@ -13,7 +13,7 @@ const ProductDetail = (props) => {
   function getObjectByName(value, array) {
     return array.find((obj) => obj.name === value);
   }
-  console.table(productObj);
+  // console.table(productObj);
 
   return (
     <div className="product-detail">
@@ -26,7 +26,7 @@ const ProductDetail = (props) => {
         name="qty-input"
         id="qty-input"
         value={quantity}
-        min={0}
+        min={1}
         onChange={(e) => setQuantity(parseInt(e.target.value))}
       />
       <button
