@@ -19,7 +19,10 @@ const Cart = (props) => {
   return (
     <div className="cart">
       <h2>Your Cart</h2>
-      <h3 className="total-price">Total Price: ${getTotalPrice()}</h3>
+      <h3 className="total-price">
+        Total Price: $
+        {Math.round((getTotalPrice() + Number.EPSILON) * 100) / 100}
+      </h3>
       {cart.length < 1 ? (
         <p>No products in cart</p>
       ) : (
@@ -73,7 +76,8 @@ const CartProduct = (props) => {
       >
         -
       </button>
-      <input type="number" name="qty" id="qty" value={quantity} />
+      {/* <input type="number" name="qty" id="qty" value={quantity} /> */}
+      <p className="current-qty">{quantity}</p>
       <button
         className="increase-qty-btn"
         type="button"
@@ -81,7 +85,16 @@ const CartProduct = (props) => {
       >
         +
       </button>
-      <h4 className="subtotal">Subtotal: ${subTotal}</h4>
+      <button
+        className="remove-product-btn"
+        type="button"
+        onClick={() => deleteItemFromCart(name, quantity)}
+      >
+        Remove from cart
+      </button>
+      <h4 className="subtotal">
+        Subtotal: ${Math.round((subTotal + Number.EPSILON) * 100) / 100}
+      </h4>
     </div>
   );
 };
