@@ -25,14 +25,20 @@ const ProductDetail = (props) => {
         type="number"
         name="qty-input"
         id="qty-input"
-        value={quantity}
+        value={quantity > 0 ? quantity : 1}
         min={1}
         onChange={(e) => setQuantity(parseInt(e.target.value))}
       />
       <button
         className="add-to-cart-btn"
         type="button"
-        onClick={() => addItemToCart(productObj.name, 1)}
+        onClick={() =>
+          addItemToCart(
+            productObj.name,
+            parseInt(document.querySelector('#qty-input').value)
+          )
+        }
+        disabled={!productObj.inStock}
       >
         Add to cart
       </button>

@@ -39,6 +39,34 @@ const App = () => {
     setCart(updatedCart);
   };
 
+  const deleteItemFromCart = (productName, quantity = -1) => {
+    // A received quanity of -1 removes entire product from cart
+    const updatedCart = [...cart];
+
+    // Check if the product ID already exists in the cart
+    const index = updatedCart.findIndex(
+      (item) => item.productName === productName
+    );
+
+    if (index !== -1) {
+      // If the product ID already exists, update the quantity
+      if (quantity < 0) {
+        // remove product from cart if negative quantity given
+        updatedCart.splice(index, 1);
+      } else {
+        updatedCart[index].quantity -= quantity;
+        if (updatedCart[index].quantity <= 0) {
+          // remove product from cart if quantity is 0 or lower
+          updatedCart.splice(index, 1);
+        }
+      }
+    } else {
+      // product doesn't exist
+    }
+
+    setCart(updatedCart);
+  };
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -61,7 +89,12 @@ const App = () => {
           />
           {/* <Route path="/checkout" element={<Checkout cart={cart} />} /> */}
         </Routes>
-        <Cart cart={cart} products={products} />
+        <Cart
+          cart={cart}
+          products={products}
+          deleteItemFromCart={deleteItemFromCart}
+          addItemToCart={addItemToCart}
+        />
       </div>
     </BrowserRouter>
   );
