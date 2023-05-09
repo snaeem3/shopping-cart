@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'; // optional
 import userEvent from '@testing-library/user-event';
 import Cart from '../Cart';
@@ -35,5 +35,52 @@ describe('Cart', () => {
     render(<Cart cart={mockCart} products={mockProducts} />);
     expect(screen.getByText('Product One')).toBeInTheDocument();
     expect(screen.getByText('Product Two')).toBeInTheDocument();
+  });
+
+  it('should call deleteItemFromCart with the correct arguments when the reduce quantity button is clicked', () => {
+    const deleteItemFromCartMock = jest.fn();
+    render(
+      <Cart
+        cart={mockCart}
+        products={mockProducts}
+        deleteItemFromCart={deleteItemFromCartMock}
+      />
+    );
+
+    fireEvent.click(screen.getAllByRole('button', { name: '-' })[0]);
+
+    expect(deleteItemFromCartMock).toHaveBeenCalledWith('Product One', 1);
+  });
+
+  it('should call addItemToCart with the correct arguments when the increase quantity button is clicked', () => {
+    const addItemToCartMock = jest.fn();
+    render(
+      <Cart
+        cart={mockCart}
+        products={mockProducts}
+        addItemToCart={addItemToCartMock}
+      />
+    );
+
+    fireEvent.click(screen.getAllByRole('button', { name: '+' })[0]);
+
+    expect(addItemToCartMock).toHaveBeenCalledWith('Product One', 1);
+  });
+
+  it('should call deleteItemFromCart with the correct arguments when the remove from cart button is clicked', () => {
+    const deleteItemFromCartMock = jest.fn();
+    render(
+      <Cart
+        cart={mockCart}
+        products={mockProducts}
+        deleteItemFromCart={deleteItemFromCartMock}
+      />
+    );
+
+    fireEvent.click(
+      screen.getAllByRole('button', { name: /remove from cart/i })[0]
+    );
+
+    expect(deleteItemFromCartMock).toHaveBeenCalledWith('Product One', 2);
   });
 });

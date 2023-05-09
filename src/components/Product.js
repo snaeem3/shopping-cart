@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Product = (props) => {
   const { productId, name, price, category, inStock, imgUrl } = props;
+  const stockClassName = inStock ? 'inStock' : 'outOfStock';
 
   return (
-    <div className="product">
+    <div className={`product ${stockClassName}`}>
       <Link to={`/shop/${name}`}>
         <h1>{name}</h1>
         <img src={imgUrl} className="product-image" alt={name} />
