@@ -9,6 +9,7 @@ const Shop = (props) => {
 
   const [currentCategory, setCurrentCategory] = useState('All');
   const [hideOutOfStock, setHideOutOfStock] = useState(false);
+  const [sortMethod, setSortMethod] = useState('A-Z');
 
   const categories = getUniqueValues(products);
 
@@ -31,9 +32,27 @@ const Shop = (props) => {
     return uniqueValues;
   }
 
+  const handleSortChange = (event) => {
+    // let value = event.target.value;
+    setSortMethod(event.target.value);
+  };
+
   return (
     <div>
       <h1>Shop</h1>
+      <label htmlFor="sort-select">Sort products by:</label>
+
+      <select
+        name="sort-select"
+        id="sort-select"
+        onChange={(e) => handleSortChange(e)}
+      >
+        {/* <option value="">--Please choose an option--</option> */}
+        <option value="A-Z">Name A-Z</option>
+        <option value="Z-A">Name Z-A</option>
+        <option value="low-high">Price low-high</option>
+        <option value="high-low">Price high-low</option>
+      </select>
       <Sidebar
         currentCategory={currentCategory}
         categories={categories}
@@ -44,6 +63,7 @@ const Shop = (props) => {
         currentCategory={currentCategory}
         items={currentItems}
         hideOutOfStock={hideOutOfStock}
+        sortMethod={sortMethod}
       />
     </div>
   );
@@ -53,10 +73,6 @@ const Sidebar = (props) => {
   const { currentCategory, categories, setCurrentCategory, setHideOutOfStock } =
     props;
 
-  const handleCheckboxChange = (event) => {
-    console.log(event.target);
-    setHideOutOfStock(event.target.checked);
-  };
   return (
     <div className="sidebar">
       <button
@@ -86,9 +102,10 @@ const Sidebar = (props) => {
 };
 
 const ProductGrid = (props) => {
-  const { currentCategory, items, hideOutOfStock } = props;
+  const { currentCategory, items, hideOutOfStock, sortMethod } = props;
   const categories = [...new Set(items.map((item) => item.category))]; // get unique categories from items
-  // console.table(items);
+
+  const sortedItems = sortArrayOfObjects(items, sortMethod);
   return (
     <div className="product-grid">
       {categories.map((category) => (
@@ -101,7 +118,7 @@ const ProductGrid = (props) => {
           }`}
         >
           <h2>{category}</h2>
-          {items
+          {sortedItems
             .filter((item) => item.category === category)
             .map((item) => {
               if (hideOutOfStock && !item.inStock) {
@@ -123,6 +140,21 @@ const ProductGrid = (props) => {
       ))}
     </div>
   );
+
+  function sortArrayOfObjects(arr, sortMethodString) {
+    switch (sortMethodString) {
+      case 'A-Z':
+        return arr.sort((a, b) => a.name.localeCompare(b.name));
+      case 'Z-A':
+        return arr.sort((a, b) => b.name.localeCompare(a.name));
+      case 'low-high':
+        return arr.sort((a, b) => a.price - b.price);
+      case 'high-low':
+        return arr.sort((a, b) => b.price - a.price);
+      default:
+        throw new Error('Invalid sort method');
+    }
+  }
 };
 
 export default Shop;
