@@ -95,4 +95,25 @@ describe('Product component', () => {
       expect(window.location.pathname).toBe('/shop/ProductName');
     });
   });
+
+  it('should call addItemToCart when quick-add-btn is clicked', () => {
+    const addItemToCart = jest.fn();
+
+    render(
+      <MemoryRouter>
+        <Product
+          productId="123"
+          name="Product Name"
+          price="$10.99"
+          category="Category Name"
+          inStock
+          imgUrl="https://example.com/product-image.jpg"
+          addItemToCart={addItemToCart}
+        />
+      </MemoryRouter>
+    );
+
+    fireEvent.click(screen.getByText('+'));
+    expect(addItemToCart).toHaveBeenCalledWith('Product Name', 1);
+  });
 });

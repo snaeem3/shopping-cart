@@ -76,6 +76,7 @@ const Shop = (props) => {
         hideOutOfStock={hideOutOfStock}
         searchText={searchText}
         sortMethod={sortMethod}
+        addItemToCart={addItemToCart}
       />
     </div>
   );
@@ -114,8 +115,14 @@ const Sidebar = (props) => {
 };
 
 const ProductGrid = (props) => {
-  const { currentCategory, items, hideOutOfStock, searchText, sortMethod } =
-    props;
+  const {
+    currentCategory,
+    items,
+    hideOutOfStock,
+    searchText,
+    sortMethod,
+    addItemToCart,
+  } = props;
   const categories = [...new Set(items.map((item) => item.category))]; // get unique categories from items
   const sortedItems = sortArrayOfObjects(items, sortMethod);
 
@@ -153,6 +160,7 @@ const ProductGrid = (props) => {
                   category={item.category}
                   inStock={item.inStock}
                   imgUrl={item.imgUrl}
+                  addItemToCart={addItemToCart}
                 />
               );
             })}

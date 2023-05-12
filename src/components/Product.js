@@ -2,7 +2,8 @@
 import { Link } from 'react-router-dom';
 
 const Product = (props) => {
-  const { productId, name, price, category, inStock, imgUrl } = props;
+  const { productId, name, price, category, inStock, imgUrl, addItemToCart } =
+    props;
   const stockClassName = inStock ? 'inStock' : 'outOfStock';
 
   return (
@@ -13,7 +14,16 @@ const Product = (props) => {
       </Link>
       <strong>{price}</strong>
       {inStock ? (
-        <span className="in-stock">IN STOCK</span>
+        <div className="in-stock-container">
+          <span className="in-stock">IN STOCK</span>
+          <button
+            type="button"
+            className="quick-add-btn"
+            onClick={() => addItemToCart(name, 1)}
+          >
+            +
+          </button>
+        </div>
       ) : (
         <span className="out-of-stock">OUT OF STOCK</span>
       )}
