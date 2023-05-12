@@ -72,4 +72,30 @@ describe('Shop component', () => {
     expect(screen.getByText('Product B')).toBeInTheDocument();
     expect(screen.getByText('Product A')).toBeInTheDocument();
   });
+
+  test('search bar only shows matching products', () => {
+    render(
+      <MemoryRouter>
+        <Shop products={products} />
+      </MemoryRouter>
+    );
+    const searchInput = screen.getByRole('searchbox');
+    fireEvent.change(searchInput, { target: { value: 'A' } });
+    expect(screen.getByText('Product A')).toBeInTheDocument();
+    expect(screen.queryByText('Product B')).not.toBeInTheDocument();
+    expect(screen.queryByText('Product C')).not.toBeInTheDocument();
+  });
+
+  test('search works with different case', () => {
+    render(
+      <MemoryRouter>
+        <Shop products={products} />
+      </MemoryRouter>
+    );
+    const searchInput = screen.getByRole('searchbox');
+    fireEvent.change(searchInput, { target: { value: 'a' } });
+    expect(screen.getByText('Product A')).toBeInTheDocument();
+    expect(screen.queryByText('Product B')).not.toBeInTheDocument();
+    expect(screen.queryByText('Product C')).not.toBeInTheDocument();
+  });
 });

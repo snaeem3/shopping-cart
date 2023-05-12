@@ -33,5 +33,13 @@ export const productData = [
     imgSrc: null,
     // id: uniqid(),
   },
+  {
+    name: 'DCBA',
+    price: 5.55,
+    category: 'Category B',
+    inStock: true,
+    imgSrc: null,
+    // id: uniqid(),
+  },
 ];
 // consider sorting products into categories then list name, price, img

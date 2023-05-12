@@ -9,6 +9,7 @@ const Shop = (props) => {
 
   const [currentCategory, setCurrentCategory] = useState('All');
   const [hideOutOfStock, setHideOutOfStock] = useState(false);
+  const [searchText, setSearchText] = useState('');
   const [sortMethod, setSortMethod] = useState('A-Z');
 
   const categories = getUniqueValues(products);
@@ -32,6 +33,10 @@ const Shop = (props) => {
     return uniqueValues;
   }
 
+  const handleSearchChange = (event) => {
+    setSearchText(event.target.value);
+  };
+
   const handleSortChange = (event) => {
     // let value = event.target.value;
     setSortMethod(event.target.value);
@@ -40,8 +45,14 @@ const Shop = (props) => {
   return (
     <div>
       <h1>Shop</h1>
+      <label htmlFor="search-bar">Search Products</label>
+      <input
+        type="search"
+        id="search-bar"
+        name="search-bar"
+        onChange={(e) => handleSearchChange(e)}
+      />
       <label htmlFor="sort-select">Sort products by:</label>
-
       <select
         name="sort-select"
         id="sort-select"
@@ -63,6 +74,7 @@ const Shop = (props) => {
         currentCategory={currentCategory}
         items={currentItems}
         hideOutOfStock={hideOutOfStock}
+        searchText={searchText}
         sortMethod={sortMethod}
       />
     </div>
@@ -102,10 +114,11 @@ const Sidebar = (props) => {
 };
 
 const ProductGrid = (props) => {
-  const { currentCategory, items, hideOutOfStock, sortMethod } = props;
+  const { currentCategory, items, hideOutOfStock, searchText, sortMethod } =
+    props;
   const categories = [...new Set(items.map((item) => item.category))]; // get unique categories from items
-
   const sortedItems = sortArrayOfObjects(items, sortMethod);
+
   return (
     <div className="product-grid">
       {categories.map((category) => (
@@ -122,6 +135,13 @@ const ProductGrid = (props) => {
             .filter((item) => item.category === category)
             .map((item) => {
               if (hideOutOfStock && !item.inStock) {
+                return;
+              }
+              if (
+                searchText.length > 0 &&
+                !item.name.toLowerCase().includes(searchText.toLowerCase())
+              ) {
+                // something is being searched and it does NOT match the search text
                 return;
               }
               return (
