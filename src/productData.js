@@ -35,7 +35,7 @@ export const productData = [
   },
   {
     name: 'DCBA',
-    price: 5.55,
+    price: 5.5,
     category: 'Category B',
     inStock: true,
     imgSrc: null,

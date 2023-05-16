@@ -19,7 +19,7 @@ const ProductDetail = (props) => {
     <div className="product-detail">
       {productObj.name}
       {productObj.description}
-      {productObj.price}
+      {productObj.price.toFixed(2)}
       <label htmlFor="qty-input">Quantity: </label>
       <input
         type="number"

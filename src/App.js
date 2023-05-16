@@ -67,10 +67,36 @@ const App = () => {
     setCart(updatedCart);
   };
 
+  const toggleCartView = () => {
+    document.querySelector('.cart').classList.toggle('hidden');
+  };
+
+  const hideCartView = () => {
+    document.querySelector('.cart').classList.add('hidden');
+  };
+
+  // document.addEventListener('click', (event) => {
+  //   const cartDiv = document.querySelector('.cart');
+  //   const isCartHidden = cartDiv.classList.contains('hidden');
+
+  //   if (
+  //     !event.target.closest('.cart') &&
+  //     !isCartHidden &&
+  //     !event.target.classList.contains('cart-toggle')
+  //   ) {
+  //     cartDiv.classList.add('hidden');
+  //   }
+  // });
+
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav homePath="/" shopPath="/shop" numCartProducts={numCartProducts} />
+        <Nav
+          homePath="/"
+          shopPath="/shop"
+          numCartProducts={numCartProducts}
+          toggleCartView={toggleCartView}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -94,6 +120,7 @@ const App = () => {
           products={products}
           deleteItemFromCart={deleteItemFromCart}
           addItemToCart={addItemToCart}
+          hideCartView={hideCartView}
         />
       </div>
     </BrowserRouter>

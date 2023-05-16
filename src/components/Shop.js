@@ -43,7 +43,7 @@ const Shop = (props) => {
   };
 
   return (
-    <div>
+    <main>
       <h1>Shop</h1>
       <label htmlFor="search-bar">Search Products</label>
       <input
@@ -78,7 +78,7 @@ const Shop = (props) => {
         sortMethod={sortMethod}
         addItemToCart={addItemToCart}
       />
-    </div>
+    </main>
   );
 };
 
@@ -104,6 +104,7 @@ const Sidebar = (props) => {
           <h2 className="category-header">{category}</h2>
         </button>
       ))}
+      <label htmlFor="hide-out-of-stock">Hide Out of Stock products</label>
       <input
         type="checkbox"
         name="hide-out-of-stock"

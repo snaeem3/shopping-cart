@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import uniqid from 'uniqid';
 
 const Cart = (props) => {
-  const { cart, products, deleteItemFromCart, addItemToCart } = props;
+  const { cart, products, deleteItemFromCart, addItemToCart, hideCartView } =
+    props;
   function getObjectByName(value, array) {
     return array.find((obj) => obj.name === value);
   }
@@ -17,11 +18,18 @@ const Cart = (props) => {
     return totalPrice;
   };
   return (
-    <div className="cart">
+    <div className="cart hidden">
+      <button
+        type="button"
+        className="close-cart-btn"
+        onClick={() => hideCartView()}
+      >
+        x
+      </button>
       <h2>Your Cart</h2>
       <h3 className="total-price">
         Total Price: $
-        {Math.round((getTotalPrice() + Number.EPSILON) * 100) / 100}
+        {(((getTotalPrice() + Number.EPSILON) * 100) / 100).toFixed(2)}
       </h3>
       {cart.length < 1 ? (
         <p>No products in cart</p>
@@ -93,7 +101,8 @@ const CartProduct = (props) => {
         Remove from cart
       </button>
       <h4 className="subtotal">
-        Subtotal: ${Math.round((subTotal + Number.EPSILON) * 100) / 100}
+        Subtotal: $
+        {(Math.round((subTotal + Number.EPSILON) * 100) / 100).toFixed(2)}
       </h4>
     </div>
   );

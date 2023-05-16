@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 const Nav = (props) => {
-  const { homePath, shopPath, numCartProducts } = props;
+  const { homePath, shopPath, numCartProducts, toggleCartView } = props;
 
   return (
     <nav>
@@ -13,7 +13,15 @@ const Nav = (props) => {
         <li>
           <Link to={shopPath}>Shop</Link>
         </li>
-        <li>Cart ({numCartProducts})</li>
+        <li>
+          <button
+            type="button"
+            className="cart-btn cart-toggle"
+            onClick={() => toggleCartView()}
+          >
+            Cart ({numCartProducts})
+          </button>
+        </li>
       </ul>
     </nav>
   );
