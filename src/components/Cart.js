@@ -30,13 +30,13 @@ const Cart = (props) => {
     <div className="cart" onClick={handleCartClick}>
       <button
         type="button"
-        className="close-cart-btn"
+        className="close-btn"
         onClick={() => hideCartView()}
       >
         {/* x */}
         <img className="close icon" src={closeIcon} alt="close icon" />
       </button>
-      <h2>Your Cart</h2>
+      <h2 className="cart-header">Your Cart</h2>
       <h3 className="total-price">
         Total Price: $
         {(((getTotalPrice() + Number.EPSILON) * 100) / 100).toFixed(2)}
@@ -82,7 +82,7 @@ const CartProduct = (props) => {
 
   return (
     <div className="cart-product">
-      <h3>{name}</h3>
+      <h3 className="cart-product-header">{name}</h3>
       <img
         src={imgUrl}
         className="product-image cart-product-image"
@@ -90,30 +90,36 @@ const CartProduct = (props) => {
       />
       <h4>{category}</h4>
       <h4 className="dollar-sign">{price.toFixed(2)}</h4>
-      <button
-        className="reduce-qty-btn"
-        type="button"
-        onClick={() => deleteItemFromCart(name, 1)}
-      >
-        {/* - */}
-        <img className="icon subtract" src={subtractIcon} alt="subtract icon" />
-      </button>
-      {/* <input type="number" name="qty" id="qty" value={quantity} /> */}
-      <p className="current-qty">{quantity}</p>
-      <button
-        className="increase-qty-btn"
-        type="button"
-        onClick={() => addItemToCart(name, 1)}
-      >
-        {/* + */}
-        <img className="icon add" src={addIcon} alt="add icon" />
-      </button>
+      <div className="cart-qty-container">
+        <button
+          className="reduce-qty-btn"
+          type="button"
+          onClick={() => deleteItemFromCart(name, 1)}
+        >
+          {/* - */}
+          <img
+            className="icon subtract"
+            src={subtractIcon}
+            alt="subtract icon"
+          />
+        </button>
+        {/* <input type="number" name="qty" id="qty" value={quantity} /> */}
+        <p className="current-qty">{quantity}</p>
+        <button
+          className="increase-qty-btn"
+          type="button"
+          onClick={() => addItemToCart(name, 1)}
+        >
+          {/* + */}
+          <img className="icon add" src={addIcon} alt="add icon" />
+        </button>
+      </div>
       <button
         className="remove-product-btn supporting-icon"
         type="button"
         onClick={() => deleteItemFromCart(name, quantity)}
       >
-        Remove from cart
+        Remove
       </button>
       <h4 className="subtotal">
         Subtotal: $
