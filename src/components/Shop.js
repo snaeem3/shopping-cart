@@ -43,31 +43,47 @@ const Shop = (props) => {
   };
 
   return (
-    <main>
+    <main className="shop-container">
       <h1>Shop</h1>
-      <div className="search-box">
-        <label htmlFor="search-bar">Search Products</label>
-        <span className="input" />
-        <input
-          type="search"
-          id="search-bar"
-          // className="supporting-icon"
-          name="search-bar"
-          onChange={(e) => handleSearchChange(e)}
-        />
+      <div className="shop-controls-container">
+        <div className="search-box">
+          <label htmlFor="search-bar">Search Products</label>
+          <div className="search-bar-wrapper">
+            <span className="input" />
+            <input
+              type="search"
+              id="search-bar"
+              // className="supporting-icon"
+              name="search-bar"
+              onChange={(e) => handleSearchChange(e)}
+            />
+          </div>
+        </div>
+        <div className="sort-box">
+          <label htmlFor="sort-select">Sort products by:</label>
+          <select
+            name="sort-select"
+            id="sort-select"
+            onChange={(e) => handleSortChange(e)}
+          >
+            {/* <option value="">--Please choose an option--</option> */}
+            <option value="A-Z">Name A-Z</option>
+            <option value="Z-A">Name Z-A</option>
+            <option value="low-high">Price low-high</option>
+            <option value="high-low">Price high-low</option>
+          </select>
+        </div>
+        <div className="outOfStock-box">
+          <label htmlFor="hide-out-of-stock">Hide Out of Stock?</label>
+          <input
+            type="checkbox"
+            name="hide-out-of-stock"
+            id="hide-out-of-stock"
+            className="toggle box-shadow"
+            onClick={(e) => setHideOutOfStock(e.target.checked)}
+          />
+        </div>
       </div>
-      <label htmlFor="sort-select">Sort products by:</label>
-      <select
-        name="sort-select"
-        id="sort-select"
-        onChange={(e) => handleSortChange(e)}
-      >
-        {/* <option value="">--Please choose an option--</option> */}
-        <option value="A-Z">Name A-Z</option>
-        <option value="Z-A">Name Z-A</option>
-        <option value="low-high">Price low-high</option>
-        <option value="high-low">Price high-low</option>
-      </select>
       <Sidebar
         currentCategory={currentCategory}
         categories={categories}
@@ -95,6 +111,7 @@ const Sidebar = (props) => {
       <button
         type="button"
         key={uniqid()}
+        className="allProducts-btn"
         onClick={(e) => setCurrentCategory('All')}
       >
         <h2 className="category-header">All Products</h2>
@@ -108,13 +125,6 @@ const Sidebar = (props) => {
           <h2 className="category-header">{category}</h2>
         </button>
       ))}
-      <label htmlFor="hide-out-of-stock">Hide Out of Stock products</label>
-      <input
-        type="checkbox"
-        name="hide-out-of-stock"
-        id="hide-out-of-stock"
-        onClick={(e) => setHideOutOfStock(e.target.checked)}
-      />
     </div>
   );
 };
