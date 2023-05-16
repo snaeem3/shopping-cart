@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
+import addIcon from '../images/add_FILL0_wght400_GRAD0_opsz48.svg';
 
 const Product = (props) => {
   const { productId, name, price, category, inStock, imgUrl, addItemToCart } =
@@ -15,17 +16,18 @@ const Product = (props) => {
       <strong className="dollar-sign">{price.toFixed(2)}</strong>
       {inStock ? (
         <div className="in-stock-container">
-          <span className="in-stock">IN STOCK</span>
+          <p className="in-stock">IN STOCK</p>
           <button
             type="button"
             className="quick-add-btn"
             onClick={() => addItemToCart(name, 1)}
           >
-            +
+            {/* + */}
+            <img className="icon add" src={addIcon} alt="add icon" />
           </button>
         </div>
       ) : (
-        <span className="out-of-stock">OUT OF STOCK</span>
+        <p className="out-of-stock">OUT OF STOCK</p>
       )}
     </div>
   );

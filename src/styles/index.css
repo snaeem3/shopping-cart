@@ -6,6 +6,7 @@
   --border-radius-default: 0.75rem;
   --primary-color: #82b4ff;
   --primary-color-dark: #46618a;
+  --secondary-color: rgb(132, 255, 245);
   --shade-color: #494949da;
   --color-shadow: grey;
   --scoreboard-color: rgb(0, 0, 0);
@@ -108,6 +109,7 @@ code {
 
 nav {
   padding: var(--section-padding);
+  background: var(--secondary-color);
 }
 
 nav ul {
@@ -218,14 +220,44 @@ input[type="search"] {
   flex-direction: column;
   gap: 0.5rem;
   list-style-type: none;
+  padding: var(--section-padding);
 }
 
 .sidebar button {
   border: solid 3px transparent;
+  width: 100%;
 }
 
 button.current-category {
   border: solid 3px black;
+}
+
+.allProducts-btn {
+  font-weight: bold;
+}
+
+.category-container {
+  padding: var(--section-padding);
+}
+
+.product {
+  border-radius: var(--border-radius-default);
+  padding: var(--section-padding);
+}
+
+.in-stock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.in-stock {
+  color: green;
+}
+
+.out-of-stock {
+  color: red;
 }
 
 .overlay {
