@@ -107,25 +107,30 @@ const Sidebar = (props) => {
     props;
 
   return (
-    <div className="sidebar">
-      <button
-        type="button"
-        key={uniqid()}
-        className="allProducts-btn"
-        onClick={(e) => setCurrentCategory('All')}
-      >
-        <h2 className="category-header">All Products</h2>
-      </button>
-      {categories.map((category) => (
+    <ul className="sidebar">
+      <li key={uniqid()}>
         <button
           type="button"
-          key={uniqid()}
-          onClick={(e) => setCurrentCategory(category)}
+          className={`allProducts-btn ${
+            currentCategory === 'All' ? 'current-category' : ''
+          }`}
+          onClick={(e) => setCurrentCategory('All')}
         >
-          <h2 className="category-header">{category}</h2>
+          <h2 className="category-header">All Products</h2>
         </button>
+      </li>
+      {categories.map((category) => (
+        <li key={uniqid()}>
+          <button
+            type="button"
+            className={currentCategory === category ? 'current-category' : ''}
+            onClick={(e) => setCurrentCategory(category)}
+          >
+            <h2 className="category-header">{category}</h2>
+          </button>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

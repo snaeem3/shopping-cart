@@ -106,6 +106,10 @@ code {
   content: "$";
 }
 
+nav {
+  padding: var(--section-padding);
+}
+
 nav ul {
   display: flex;
   list-style-type: none;
@@ -207,6 +211,21 @@ input[type="search"] {
 
 .toggle:checked:before {
   left: 44px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style-type: none;
+}
+
+.sidebar button {
+  border: solid 3px transparent;
+}
+
+button.current-category {
+  border: solid 3px black;
 }
 
 .overlay {
