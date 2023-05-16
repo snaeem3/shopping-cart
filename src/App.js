@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import uniqid from 'uniqid';
 import { productData } from './productData';
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Shop from './components/Shop';

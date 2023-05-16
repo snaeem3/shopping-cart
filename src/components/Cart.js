@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import uniqid from 'uniqid';
+import addIcon from '../images/add_FILL0_wght400_GRAD0_opsz48.svg';
+import subtractIcon from '../images/remove_FILL0_wght400_GRAD0_opsz48.svg';
+import closeIcon from '../images/close.svg';
 
 const Cart = (props) => {
   const { cart, products, deleteItemFromCart, addItemToCart, hideCartView } =
@@ -30,7 +33,8 @@ const Cart = (props) => {
         className="close-cart-btn"
         onClick={() => hideCartView()}
       >
-        x
+        {/* x */}
+        <img className="close icon" src={closeIcon} alt="close icon" />
       </button>
       <h2>Your Cart</h2>
       <h3 className="total-price">
@@ -55,6 +59,9 @@ const Cart = (props) => {
               addItemToCart={addItemToCart}
             />
           ))}
+          <button type="button" className="checkout-btn supporting-icon">
+            Checkout
+          </button>
         </div>
       )}
     </div>
@@ -82,13 +89,14 @@ const CartProduct = (props) => {
         alt={name}
       />
       <h4>{category}</h4>
-      <h4>{price}</h4>
+      <h4 className="dollar-sign">{price.toFixed(2)}</h4>
       <button
         className="reduce-qty-btn"
         type="button"
         onClick={() => deleteItemFromCart(name, 1)}
       >
-        -
+        {/* - */}
+        <img className="icon subtract" src={subtractIcon} alt="subtract icon" />
       </button>
       {/* <input type="number" name="qty" id="qty" value={quantity} /> */}
       <p className="current-qty">{quantity}</p>
@@ -97,10 +105,11 @@ const CartProduct = (props) => {
         type="button"
         onClick={() => addItemToCart(name, 1)}
       >
-        +
+        {/* + */}
+        <img className="icon add" src={addIcon} alt="add icon" />
       </button>
       <button
-        className="remove-product-btn"
+        className="remove-product-btn supporting-icon"
         type="button"
         onClick={() => deleteItemFromCart(name, quantity)}
       >

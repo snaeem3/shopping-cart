@@ -67,6 +67,18 @@ button:not(:disabled):hover {
   vertical-align: bottom;
 }
 
+.supporting-icon::after {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: 1.5rem 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: super;
+  margin-left: 0.5rem;
+}
+
 .hidden {
   display: none;
 }
@@ -89,6 +101,10 @@ code {
   position: relative;
 }
 
+.dollar-sign::before {
+  content: "$";
+}
+
 .overlay {
   position: fixed;
   width: 100%;
@@ -103,9 +119,12 @@ code {
   border-left: solid 2px black;
   background: white;
   right: 0;
+  width: 100%;
   height: 100%;
   transform: translateX(100%);
   animation: slideInCart 0.5s forwards;
+  padding: var(--section-padding);
+  overflow-y: auto;
 }
 
 @keyframes slideInCart {
@@ -119,4 +138,26 @@ code {
 
 .overlay:not(.hidden) .cart {
   transform: translateX(0%);
+}
+
+.remove-product-btn::after {
+  background-image: url(/src/images/delete_FILL0_wght400_GRAD0_opsz48.svg);
+}
+
+.checkout-btn {
+  background: rgb(255, 123, 0);
+}
+
+.checkout-btn:not(:disabled):hover {
+  background: rgb(182, 88, 0);
+}
+
+.checkout-btn::after {
+  background-image: url(/src/images/payments_FILL0_wght400_GRAD0_opsz48.svg);
+}
+
+@media (min-width: 780px) {
+  .cart {
+    width: 20%;
+  }
 }
