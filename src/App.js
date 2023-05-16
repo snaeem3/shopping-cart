@@ -68,25 +68,12 @@ const App = () => {
   };
 
   const toggleCartView = () => {
-    document.querySelector('.cart').classList.toggle('hidden');
+    document.querySelector('.overlay').classList.toggle('hidden');
   };
 
   const hideCartView = () => {
-    document.querySelector('.cart').classList.add('hidden');
+    document.querySelector('.overlay').classList.add('hidden');
   };
-
-  // document.addEventListener('click', (event) => {
-  //   const cartDiv = document.querySelector('.cart');
-  //   const isCartHidden = cartDiv.classList.contains('hidden');
-
-  //   if (
-  //     !event.target.closest('.cart') &&
-  //     !isCartHidden &&
-  //     !event.target.classList.contains('cart-toggle')
-  //   ) {
-  //     cartDiv.classList.add('hidden');
-  //   }
-  // });
 
   return (
     <BrowserRouter>
@@ -115,13 +102,15 @@ const App = () => {
           />
           {/* <Route path="/checkout" element={<Checkout cart={cart} />} /> */}
         </Routes>
-        <Cart
-          cart={cart}
-          products={products}
-          deleteItemFromCart={deleteItemFromCart}
-          addItemToCart={addItemToCart}
-          hideCartView={hideCartView}
-        />
+        <div className="overlay hidden" onClick={hideCartView}>
+          <Cart
+            cart={cart}
+            products={products}
+            deleteItemFromCart={deleteItemFromCart}
+            addItemToCart={addItemToCart}
+            hideCartView={hideCartView}
+          />
+        </div>
       </div>
     </BrowserRouter>
   );

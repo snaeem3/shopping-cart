@@ -9,6 +9,7 @@ const Cart = (props) => {
   function getObjectByName(value, array) {
     return array.find((obj) => obj.name === value);
   }
+
   const getTotalPrice = () => {
     let totalPrice = 0;
     for (const cartProduct of cart) {
@@ -17,8 +18,13 @@ const Cart = (props) => {
     }
     return totalPrice;
   };
+
+  const handleCartClick = (event) => {
+    event.stopPropagation();
+  };
+
   return (
-    <div className="cart hidden">
+    <div className="cart" onClick={handleCartClick}>
       <button
         type="button"
         className="close-cart-btn"
