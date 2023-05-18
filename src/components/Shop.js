@@ -45,13 +45,17 @@ const Shop = (props) => {
   return (
     <main>
       <h1>Shop</h1>
-      <label htmlFor="search-bar">Search Products</label>
-      <input
-        type="search"
-        id="search-bar"
-        name="search-bar"
-        onChange={(e) => handleSearchChange(e)}
-      />
+      <div className="search-box">
+        <label htmlFor="search-bar">Search Products</label>
+        <span className="input" />
+        <input
+          type="search"
+          id="search-bar"
+          // className="supporting-icon"
+          name="search-bar"
+          onChange={(e) => handleSearchChange(e)}
+        />
+      </div>
       <label htmlFor="sort-select">Sort products by:</label>
       <select
         name="sort-select"

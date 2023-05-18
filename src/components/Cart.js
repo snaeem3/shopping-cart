@@ -82,12 +82,14 @@ const CartProduct = (props) => {
 
   return (
     <div className="cart-product">
-      <h3 className="cart-product-header">{name}</h3>
-      <img
-        src={imgUrl}
-        className="product-image cart-product-image"
-        alt={name}
-      />
+      <Link to={`/shop/${name}`}>
+        <h3 className="cart-product-header">{name}</h3>
+        <img
+          src={imgUrl}
+          className="product-image cart-product-image"
+          alt={name}
+        />
+      </Link>
       <h4>{category}</h4>
       <h4 className="dollar-sign">{price.toFixed(2)}</h4>
       <div className="cart-qty-container">

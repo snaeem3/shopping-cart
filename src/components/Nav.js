@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
+import cartIcon from '../images/shopping_cart_FILL0_wght400_GRAD0_opsz48.svg';
 
 const Nav = (props) => {
   const { homePath, shopPath, numCartProducts, toggleCartView } = props;
@@ -19,7 +20,8 @@ const Nav = (props) => {
             className="cart-btn cart-toggle"
             onClick={() => toggleCartView()}
           >
-            Cart ({numCartProducts})
+            <img src={cartIcon} className=".icon" alt="cart icon" /> (
+            {numCartProducts})
           </button>
         </li>
       </ul>
