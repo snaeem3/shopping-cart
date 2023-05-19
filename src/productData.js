@@ -1,44 +1,49 @@
 import uniqid from 'uniqid';
+import catanImg from './images/product images/Catan-boxart.jpg';
+import pandemicImg from './images/product images/Pandemic-boxart.jpg';
+import codenamesImg from './images/product images/codenames-boxart.jpeg';
+import resistanceImg from './images/product images/resistance-boxart.jpg';
+import onuwImg from './images/product images/onuw-boxart.jpg';
 
 export const productData = [
   {
-    name: 'A',
+    name: 'Settlers of Catan',
     price: 1.11,
-    category: 'Category A',
+    category: 'Strategy',
     inStock: true,
-    imgSrc: null,
+    imgSrc: catanImg,
     // id: uniqid(),
   },
   {
-    name: 'B',
+    name: 'Pandemic',
     price: 2.22,
-    category: 'Category A',
+    category: 'Strategy',
     inStock: true,
-    imgSrc: null,
+    imgSrc: pandemicImg,
     // id: uniqid(),
   },
   {
-    name: 'C',
+    name: 'Codenames',
     price: 3.33,
-    category: 'Category B',
+    category: 'Social',
     inStock: true,
-    imgSrc: null,
+    imgSrc: codenamesImg,
     // id: uniqid(),
   },
   {
-    name: 'D',
+    name: 'Resistance',
     price: 4.44,
-    category: 'Category B',
+    category: 'Social',
     inStock: false,
-    imgSrc: null,
+    imgSrc: resistanceImg,
     // id: uniqid(),
   },
   {
-    name: 'DCBA',
+    name: 'One Night Ultimate Werewolf',
     price: 5.5,
-    category: 'Category B',
+    category: 'Social',
     inStock: true,
-    imgSrc: null,
+    imgSrc: onuwImg,
     // id: uniqid(),
   },
 ];

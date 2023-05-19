@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import addIcon from '../images/add_FILL0_wght400_GRAD0_opsz48.svg';
 
 const Product = (props) => {
-  const { productId, name, price, category, inStock, imgUrl, addItemToCart } =
+  const { productId, name, price, category, inStock, imgSrc, addItemToCart } =
     props;
   const stockClassName = inStock ? 'inStock' : 'outOfStock';
 
@@ -11,7 +11,7 @@ const Product = (props) => {
     <div className={`product ${stockClassName} box-shadow`}>
       <Link to={`/shop/${name}`}>
         <h1>{name}</h1>
-        <img src={imgUrl} className="product-image" alt={name} />
+        <img src={imgSrc} className="product-image" alt={name} />
       </Link>
       <strong className="dollar-sign">{price.toFixed(2)}</strong>
       {inStock ? (

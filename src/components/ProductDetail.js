@@ -18,6 +18,7 @@ const ProductDetail = (props) => {
   return (
     <div className="product-detail">
       {productObj.name}
+      <img src={productObj.imgSrc} alt={productObj.name} />
       {productObj.description}
       {productObj.price.toFixed(2)}
       <label htmlFor="qty-input">Quantity: </label>

@@ -179,7 +179,7 @@ const ProductGrid = (props) => {
                   price={item.price}
                   category={item.category}
                   inStock={item.inStock}
-                  imgUrl={item.imgUrl}
+                  imgSrc={item.imgSrc}
                   addItemToCart={addItemToCart}
                 />
               );

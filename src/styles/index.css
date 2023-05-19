@@ -240,9 +240,20 @@ button.current-category {
   padding: var(--section-padding);
 }
 
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
 .product {
   border-radius: var(--border-radius-default);
   padding: var(--section-padding);
+  width: 80vw;
+}
+
+.product-image {
+  max-width: 100%;
 }
 
 .in-stock-container {
