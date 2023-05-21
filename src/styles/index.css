@@ -376,6 +376,8 @@ button.current-category {
 
 .cart-header {
   margin-top: 1rem;
+  width: 100%;
+  border-bottom: 2px solid black;
 }
 
 .CartProduct-container {
