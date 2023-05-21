@@ -149,7 +149,7 @@ const ProductGrid = (props) => {
   return (
     <div className="product-grid">
       {categories.map((category) => (
-        <div
+        <section
           key={category}
           className={`category-container ${
             category === currentCategory || category === 'all'
@@ -184,7 +184,7 @@ const ProductGrid = (props) => {
                 />
               );
             })}
-        </div>
+        </section>
       ))}
     </div>
   );

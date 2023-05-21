@@ -97,6 +97,7 @@ const App = () => {
               <ProductDetail
                 addItemToCart={addItemToCart}
                 products={products}
+                toggleCartView={toggleCartView}
               />
             }
           />

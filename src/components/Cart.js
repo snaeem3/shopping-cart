@@ -49,7 +49,7 @@ const Cart = (props) => {
             <CartProduct
               key={getObjectByName(cartProduct.productName, products).id}
               name={cartProduct.productName}
-              imgUrl={getObjectByName(cartProduct.productName, products).imgUrl}
+              imgSrc={getObjectByName(cartProduct.productName, products).imgSrc}
               price={getObjectByName(cartProduct.productName, products).price}
               category={
                 getObjectByName(cartProduct.productName, products).category
@@ -71,7 +71,7 @@ const Cart = (props) => {
 const CartProduct = (props) => {
   const {
     name,
-    imgUrl,
+    imgSrc,
     price,
     quantity,
     category,
@@ -85,7 +85,7 @@ const CartProduct = (props) => {
       <Link to={`/shop/${name}`}>
         <h3 className="cart-product-header">{name}</h3>
         <img
-          src={imgUrl}
+          src={imgSrc}
           className="product-image cart-product-image"
           alt={name}
         />

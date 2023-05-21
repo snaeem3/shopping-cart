@@ -10,13 +10,13 @@ const Product = (props) => {
   return (
     <div className={`product ${stockClassName} box-shadow`}>
       <Link to={`/shop/${name}`}>
-        <h1>{name}</h1>
         <img src={imgSrc} className="product-image" alt={name} />
+        <h3>{name}</h3>
       </Link>
       <strong className="dollar-sign">{parseInt(price).toFixed(2)}</strong>
       {inStock ? (
         <div className="in-stock-container">
-          <p className="in-stock">IN STOCK</p>
+          <strong className="in-stock">IN STOCK</strong>
           <button
             type="button"
             className="quick-add-btn"
@@ -27,7 +27,7 @@ const Product = (props) => {
           </button>
         </div>
       ) : (
-        <p className="out-of-stock">OUT OF STOCK</p>
+        <strong className="out-of-stock">OUT OF STOCK</strong>
       )}
     </div>
   );

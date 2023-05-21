@@ -31,7 +31,7 @@ export const productData = [
     // id: uniqid(),
   },
   {
-    name: 'Resistance',
+    name: 'The Resistance',
     price: 4.44,
     category: 'Social',
     inStock: false,
