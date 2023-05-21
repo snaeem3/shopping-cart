@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { productData } from '../productData';
 import SlideShow from './SlideShow';
 
-const Home = () => {
+const Home = (props) => {
+  const { shopPath } = props;
   const getImages = 0;
 
   return (
@@ -22,17 +24,19 @@ const Home = () => {
         group. Immerse yourself in captivating narratives, engage in intense
         competition, and forge unforgettable memories with friends and family.
       </p>
-      <p>
+      {/* <p>
         At Board Game Hub, we believe in the power of play. We strive to provide
         not only a fantastic selection of games but also an exceptional shopping
         experience. Our user-friendly website makes browsing and finding your
         favorite titles a breeze. Our team of passionate gamers is always on
         hand to offer expert recommendations, ensuring you find the perfect game
         for any occasion.
-      </p>
-      <button type="button" className="shop-btn">
-        Shop Now
-      </button>
+      </p> */}
+      <Link to={shopPath}>
+        <button type="button" className="shop-btn">
+          Shop Now
+        </button>
+      </Link>
       <p>Let the games begin!</p>
     </main>
   );

@@ -85,7 +85,7 @@ const App = () => {
           toggleCartView={toggleCartView}
         />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home shopPath="/shop" />} />
           <Route
             path="/shop"
             exact
