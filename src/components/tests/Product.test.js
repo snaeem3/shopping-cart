@@ -113,7 +113,7 @@ describe('Product component', () => {
       </MemoryRouter>
     );
 
-    fireEvent.click(screen.getByText('+'));
+    fireEvent.click(screen.getByRole('button'));
     expect(addItemToCart).toHaveBeenCalledWith('Product Name', 1);
   });
 });

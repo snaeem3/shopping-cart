@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom'; // optional
 import userEvent from '@testing-library/user-event';
 import Cart from '../Cart';
@@ -32,7 +33,11 @@ describe('Cart', () => {
   });
 
   it('should render each product in the cart', () => {
-    render(<Cart cart={mockCart} products={mockProducts} />);
+    render(
+      <MemoryRouter>
+        <Cart cart={mockCart} products={mockProducts} />
+      </MemoryRouter>
+    );
     expect(screen.getByText('Product One')).toBeInTheDocument();
     expect(screen.getByText('Product Two')).toBeInTheDocument();
   });
@@ -40,14 +45,18 @@ describe('Cart', () => {
   it('should call deleteItemFromCart with the correct arguments when the reduce quantity button is clicked', () => {
     const deleteItemFromCartMock = jest.fn();
     render(
-      <Cart
-        cart={mockCart}
-        products={mockProducts}
-        deleteItemFromCart={deleteItemFromCartMock}
-      />
+      <MemoryRouter>
+        <Cart
+          cart={mockCart}
+          products={mockProducts}
+          deleteItemFromCart={deleteItemFromCartMock}
+        />
+      </MemoryRouter>
     );
 
-    fireEvent.click(screen.getAllByRole('button', { name: '-' })[0]);
+    fireEvent.click(
+      screen.getAllByRole('button', { name: 'subtract icon' })[0]
+    );
 
     expect(deleteItemFromCartMock).toHaveBeenCalledWith('Product One', 1);
   });
@@ -55,14 +64,16 @@ describe('Cart', () => {
   it('should call addItemToCart with the correct arguments when the increase quantity button is clicked', () => {
     const addItemToCartMock = jest.fn();
     render(
-      <Cart
-        cart={mockCart}
-        products={mockProducts}
-        addItemToCart={addItemToCartMock}
-      />
+      <MemoryRouter>
+        <Cart
+          cart={mockCart}
+          products={mockProducts}
+          addItemToCart={addItemToCartMock}
+        />
+      </MemoryRouter>
     );
 
-    fireEvent.click(screen.getAllByRole('button', { name: '+' })[0]);
+    fireEvent.click(screen.getAllByRole('button', { name: 'add icon' })[0]);
 
     expect(addItemToCartMock).toHaveBeenCalledWith('Product One', 1);
   });
@@ -70,16 +81,16 @@ describe('Cart', () => {
   it('should call deleteItemFromCart with the correct arguments when the remove from cart button is clicked', () => {
     const deleteItemFromCartMock = jest.fn();
     render(
-      <Cart
-        cart={mockCart}
-        products={mockProducts}
-        deleteItemFromCart={deleteItemFromCartMock}
-      />
+      <MemoryRouter>
+        <Cart
+          cart={mockCart}
+          products={mockProducts}
+          deleteItemFromCart={deleteItemFromCartMock}
+        />
+      </MemoryRouter>
     );
 
-    fireEvent.click(
-      screen.getAllByRole('button', { name: /remove from cart/i })[0]
-    );
+    fireEvent.click(screen.getAllByRole('button', { name: /remove/i })[0]);
 
     expect(deleteItemFromCartMock).toHaveBeenCalledWith('Product One', 2);
   });
