@@ -8,8 +8,13 @@ const Home = () => {
 
   return (
     <main className="home">
-      <h1>Board Game Hub</h1>
-      <SlideShow images={productData.map((product) => product.imgSrc)} />
+      <h1>
+        Board Game <span className="hub">Hub</span>
+      </h1>
+      <SlideShow
+        images={productData.map((product) => product.imgSrc)}
+        captions={productData.map((product) => product.name)}
+      />
       <p>
         Explore our vast collection of board games, carefully curated to offer a
         diverse range of thrilling experiences. From strategic masterpieces to
@@ -25,6 +30,9 @@ const Home = () => {
         hand to offer expert recommendations, ensuring you find the perfect game
         for any occasion.
       </p>
+      <button type="button" className="shop-btn">
+        Shop Now
+      </button>
       <p>Let the games begin!</p>
     </main>
   );

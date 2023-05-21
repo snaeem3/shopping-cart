@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/SlideShow.css'; // Assuming you have a CSS file for the slideshow styles
 
 const SlideShow = (props) => {
-  const { images } = props;
+  const { images, captions } = props;
   const interval = 5;
 
   const [index, setIndex] = useState(0);
@@ -24,16 +24,18 @@ const SlideShow = (props) => {
   }, [images.length, interval]);
 
   const activeImage = images[index];
+  const activeCaption = captions[index];
   const fadeClass = fadeOut ? 'fade-out' : '';
 
   return (
-    <div className="slide-show">
+    <figure className="slide-show">
       <img
         className={`slide ${fadeClass}`}
         src={activeImage}
         alt="slide show"
       />
-    </div>
+      <figcaption className="slide-caption">{activeCaption}</figcaption>
+    </figure>
   );
 };
 
