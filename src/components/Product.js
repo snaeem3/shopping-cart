@@ -11,24 +11,28 @@ const Product = (props) => {
     <div className={`product ${stockClassName} box-shadow`}>
       <Link to={`/shop/${name}`}>
         <img src={imgSrc} className="product-image" alt={name} />
-        <h3>{name}</h3>
       </Link>
-      <strong className="dollar-sign">{parseInt(price).toFixed(2)}</strong>
-      {inStock ? (
-        <div className="in-stock-container">
-          <strong className="in-stock">IN STOCK</strong>
-          <button
-            type="button"
-            className="quick-add-btn"
-            onClick={() => addItemToCart(name, 1)}
-          >
-            {/* + */}
-            <img className="icon add" src={addIcon} alt="add icon" />
-          </button>
-        </div>
-      ) : (
-        <strong className="out-of-stock">OUT OF STOCK</strong>
-      )}
+      <div className="product-text">
+        <Link to={`/shop/${name}`}>
+          <h3>{name}</h3>
+        </Link>
+        <strong className="dollar-sign">{parseInt(price).toFixed(2)}</strong>
+        {inStock ? (
+          <div className="in-stock-container">
+            <strong className="in-stock">IN STOCK</strong>
+            <button
+              type="button"
+              className="quick-add-btn"
+              onClick={() => addItemToCart(name, 1)}
+            >
+              {/* + */}
+              <img className="icon add" src={addIcon} alt="add icon" />
+            </button>
+          </div>
+        ) : (
+          <strong className="out-of-stock">OUT OF STOCK</strong>
+        )}
+      </div>
     </div>
   );
 };

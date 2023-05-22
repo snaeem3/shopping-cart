@@ -158,32 +158,34 @@ const ProductGrid = (props) => {
           }`}
         >
           <h2>{category}</h2>
-          {sortedItems
-            .filter((item) => item.category === category)
-            .map((item) => {
-              if (hideOutOfStock && !item.inStock) {
-                return;
-              }
-              if (
-                searchText.length > 0 &&
-                !item.name.toLowerCase().includes(searchText.toLowerCase())
-              ) {
-                // something is being searched and it does NOT match the search text
-                return;
-              }
-              return (
-                <Product
-                  key={item.id}
-                  productId={item.id}
-                  name={item.name}
-                  price={item.price}
-                  category={item.category}
-                  inStock={item.inStock}
-                  imgSrc={item.imgSrc}
-                  addItemToCart={addItemToCart}
-                />
-              );
-            })}
+          <div className="sorted-products">
+            {sortedItems
+              .filter((item) => item.category === category)
+              .map((item) => {
+                if (hideOutOfStock && !item.inStock) {
+                  return;
+                }
+                if (
+                  searchText.length > 0 &&
+                  !item.name.toLowerCase().includes(searchText.toLowerCase())
+                ) {
+                  // something is being searched and it does NOT match the search text
+                  return;
+                }
+                return (
+                  <Product
+                    key={item.id}
+                    productId={item.id}
+                    name={item.name}
+                    price={item.price}
+                    category={item.category}
+                    inStock={item.inStock}
+                    imgSrc={item.imgSrc}
+                    addItemToCart={addItemToCart}
+                  />
+                );
+              })}
+          </div>
         </section>
       ))}
     </div>
