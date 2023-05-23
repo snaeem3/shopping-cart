@@ -7,6 +7,7 @@ const Nav = (props) => {
 
   return (
     <nav>
+      <div className="logo-container" />
       <ul>
         <li>
           <Link to={homePath}>Home</Link>

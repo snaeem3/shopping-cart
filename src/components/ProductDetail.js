@@ -36,7 +36,7 @@ const ProductDetail = (props) => {
           <strong className="out-of-stock">OUT OF STOCK</strong>
         )}
         <button
-          className="add-to-cart-btn"
+          className="add-to-cart-btn box-shadow"
           type="button"
           onClick={() => {
             addItemToCart(

@@ -34,7 +34,7 @@ const Home = (props) => {
           for any occasion.
         </p> */}
         <Link to={shopPath}>
-          <button type="button" className="shop-btn">
+          <button type="button" className="shop-btn box-shadow">
             Shop Now
           </button>
         </Link>
