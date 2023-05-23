@@ -9,12 +9,9 @@ import sorryImg from './images/product images/sorry-boxart.jpg';
 import scrabbleImg from './images/product images/scrabble-boxart.webp';
 import clueImg from './images/product images/clue-boxart.webp';
 import lifeImg from './images/product images/life-boxart.jpg';
-<<<<<<< HEAD
-=======
 import cahImg from './images/product images/cah.png';
 import riskImg from './images/product images/risk-boxart.webp';
 import ticketToRideImg from './images/product images/Ticket to Ride-boxart.jpeg';
->>>>>>> 7a0d036 (Add additional products, product descriptions, and styling tweaks)
 
 export const productData = [
   {
@@ -112,8 +109,6 @@ export const productData = [
     inStock: false,
     imgSrc: clueImg,
   },
-<<<<<<< HEAD
-=======
   {
     name: 'Cards Against Humanity',
     price: 29,
@@ -141,6 +136,5 @@ export const productData = [
     inStock: true,
     imgSrc: ticketToRideImg,
   },
->>>>>>> 7a0d036 (Add additional products, product descriptions, and styling tweaks)
 ];
 // consider sorting products into categories then list name, price, img
