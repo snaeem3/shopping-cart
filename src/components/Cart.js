@@ -91,7 +91,7 @@ const CartProduct = (props) => {
         />
       </Link>
       <h4>{category}</h4>
-      <h4 className="dollar-sign">{parseInt(price).toFixed(2)}</h4>
+      <h4 className="dollar-sign">{parseFloat(price).toFixed(2)}</h4>
       <div className="cart-qty-container">
         <button
           className="reduce-qty-btn"

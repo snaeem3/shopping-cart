@@ -560,6 +560,8 @@ button.current-category {
   grid-row: 1 /2;
   display: inline-block;
   vertical-align: middle;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .qty-container {
@@ -616,7 +618,11 @@ footer a {
   }
 
   .cart {
-    width: 25%;
+    width: 30%;
+  }
+
+  .cart-qty-container {
+    width: 100%;
   }
 
   .home {
@@ -695,6 +701,10 @@ footer a {
   }
 }
 @media (min-width: 1480px) {
+  .cart {
+    width: 20%;
+  }
+
   .product-detail > img {
     grid-column: 2 / 3;
   }
