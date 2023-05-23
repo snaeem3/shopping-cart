@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react';
 const ProductDetail = (props) => {
   const { productName } = useParams();
   const { addItemToCart, products, toggleCartView } = props;
-  // Use the productId to fetch and display the appropriate product
 
   const [quantity, setQuantity] = useState(0);
 
@@ -18,33 +17,35 @@ const ProductDetail = (props) => {
     <div className="product-detail">
       <h1>{productObj.name}</h1>
       <img src={productObj.imgSrc} alt={productObj.name} />
-      <p className="product-description">{productObj.description}</p>
-      <strong className="dollar-sign">{productObj.price.toFixed(2)}</strong>
-      <div className="qty-container">
-        <label htmlFor="qty-input">Quantity: </label>
-        <input
-          type="number"
-          name="qty-input"
-          id="qty-input"
-          value={quantity > 0 ? quantity : 1}
-          min={1}
-          onChange={(e) => setQuantity(parseInt(e.target.value))}
-        />
+      <div className="product-detail-content">
+        <p className="product-description">{productObj.description}</p>
+        <strong className="dollar-sign">{productObj.price.toFixed(2)}</strong>
+        <div className="qty-container">
+          <label htmlFor="qty-input">Quantity: </label>
+          <input
+            type="number"
+            name="qty-input"
+            id="qty-input"
+            value={quantity > 0 ? quantity : 1}
+            min={1}
+            onChange={(e) => setQuantity(parseInt(e.target.value))}
+          />
+        </div>
+        <button
+          className="add-to-cart-btn"
+          type="button"
+          onClick={() => {
+            addItemToCart(
+              productObj.name,
+              parseInt(document.querySelector('#qty-input').value)
+            );
+            toggleCartView();
+          }}
+          disabled={!productObj.inStock}
+        >
+          Add to cart
+        </button>
       </div>
-      <button
-        className="add-to-cart-btn"
-        type="button"
-        onClick={() => {
-          addItemToCart(
-            productObj.name,
-            parseInt(document.querySelector('#qty-input').value)
-          );
-          toggleCartView();
-        }}
-        disabled={!productObj.inStock}
-      >
-        Add to cart
-      </button>
     </div>
   );
 };

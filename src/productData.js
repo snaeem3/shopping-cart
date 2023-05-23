@@ -18,6 +18,7 @@ export const productData = [
     name: 'Pandemic',
     price: 2.22,
     category: 'Strategy',
+    description: 'Cure all the viruses!',
     inStock: true,
     imgSrc: pandemicImg,
     // id: uniqid(),

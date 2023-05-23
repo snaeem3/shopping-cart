@@ -16,7 +16,7 @@ const Product = (props) => {
         <Link to={`/shop/${name}`}>
           <h3>{name}</h3>
         </Link>
-        <strong className="dollar-sign">{parseInt(price).toFixed(2)}</strong>
+        <strong className="dollar-sign">{parseFloat(price).toFixed(2)}</strong>
         {inStock ? (
           <div className="in-stock-container">
             <strong className="in-stock">IN STOCK</strong>
