@@ -9,6 +9,12 @@ import sorryImg from './images/product images/sorry-boxart.jpg';
 import scrabbleImg from './images/product images/scrabble-boxart.webp';
 import clueImg from './images/product images/clue-boxart.webp';
 import lifeImg from './images/product images/life-boxart.jpg';
+<<<<<<< HEAD
+=======
+import cahImg from './images/product images/cah.png';
+import riskImg from './images/product images/risk-boxart.webp';
+import ticketToRideImg from './images/product images/Ticket to Ride-boxart.jpeg';
+>>>>>>> 7a0d036 (Add additional products, product descriptions, and styling tweaks)
 
 export const productData = [
   {
@@ -106,5 +112,35 @@ export const productData = [
     inStock: false,
     imgSrc: clueImg,
   },
+<<<<<<< HEAD
+=======
+  {
+    name: 'Cards Against Humanity',
+    price: 29,
+    category: 'Social',
+    description:
+      'Cards Against Humanity is the hilarious and irreverent party game that pushes the boundaries of humor and laughter. This adult-oriented game challenges players to complete fill-in-the-blank statements with the most outrageous and politically incorrect responses they can muster. With a deck of black cards containing phrases and a deck of white cards with various words or phrases, the combinations are endless. The goal is to create the funniest, most shocking, and absurd combinations to win the round. Cards Against Humanity is perfect for gatherings and parties where no topic is off-limits. Get ready for a wild and unpredictable experience that will have you laughing uncontrollably as you discover just how twisted and creative your friends can be.',
+    inStock: true,
+    imgSrc: cahImg,
+  },
+  {
+    name: 'Risk',
+    price: 31.44,
+    category: 'Strategy',
+    description:
+      'Risk is the ultimate strategic conquest game that transports players to a world of global domination and intense warfare. As a military commander, you must carefully deploy your armies, fortify your territories, and forge alliances to conquer the world. From continent to continent, engage in epic battles, negotiate treaties, and outmaneuver your opponents in a quest for total domination. Will you lead your forces to victory or fall victim to calculated attacks? Risk offers an immersive and dynamic gameplay experience, where every decision carries weight and the stakes are high. Gather your allies, roll the dice, and embark on a thrilling journey of conquest and power in the gripping world of Risk.',
+    inStock: true,
+    imgSrc: riskImg,
+  },
+  {
+    name: 'Ticket to Ride',
+    price: 46.75,
+    category: 'Strategy',
+    description:
+      "Ticket to Ride is an exciting and engaging board game that takes players on a cross-country train adventure. In this strategic and competitive game, players compete to build train routes connecting various cities across the United States (or other regions depending on the edition). Collect colored train cards, claim routes, and complete destination tickets to earn points. With its accessible rules and captivating gameplay, Ticket to Ride is perfect for players of all ages and experience levels. Plan your routes wisely, thwart your opponents' plans, and race against time to become the most successful railroad tycoon. Whether you're a seasoned gamer or new to board games, Ticket to Ride promises hours of fun and strategic thinking. All aboard for an unforgettable journey of railways and rivalries!",
+    inStock: true,
+    imgSrc: ticketToRideImg,
+  },
+>>>>>>> 7a0d036 (Add additional products, product descriptions, and styling tweaks)
 ];
 // consider sorting products into categories then list name, price, img
