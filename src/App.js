@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Shop from './components/Shop';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
+import Footer from './components/Footer';
 
 const App = () => {
   const [cart, setCart] = useState([]);
@@ -112,6 +113,7 @@ const App = () => {
             hideCartView={hideCartView}
           />
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );

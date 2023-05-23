@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
-import cartIcon from '../images/shopping_cart_FILL0_wght400_GRAD0_opsz48.svg';
+import cartIcon from '../images/icons/shopping_cart_FILL0_wght400_GRAD0_opsz48.svg';
 
 const Nav = (props) => {
   const { homePath, shopPath, numCartProducts, toggleCartView } = props;

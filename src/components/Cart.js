@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import uniqid from 'uniqid';
-import addIcon from '../images/add_FILL0_wght400_GRAD0_opsz48.svg';
-import subtractIcon from '../images/remove_FILL0_wght400_GRAD0_opsz48.svg';
-import closeIcon from '../images/close.svg';
+import addIcon from '../images/icons/add_FILL0_wght400_GRAD0_opsz48.svg';
+import subtractIcon from '../images/icons/remove_FILL0_wght400_GRAD0_opsz48.svg';
+import closeIcon from '../images/icons/close.svg';
 
 const Cart = (props) => {
   const { cart, products, deleteItemFromCart, addItemToCart, hideCartView } =

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
-import addIcon from '../images/add_FILL0_wght400_GRAD0_opsz48.svg';
+import addIcon from '../images/icons/add_FILL0_wght400_GRAD0_opsz48.svg';
 
 const Product = (props) => {
   const { productId, name, price, category, inStock, imgSrc, addItemToCart } =
