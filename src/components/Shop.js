@@ -30,7 +30,7 @@ const Shop = (props) => {
       return values;
     }, []);
 
-    return uniqueValues;
+    return uniqueValues.sort();
   }
 
   const handleSearchChange = (event) => {
@@ -103,8 +103,7 @@ const Shop = (props) => {
 };
 
 const Sidebar = (props) => {
-  const { currentCategory, categories, setCurrentCategory, setHideOutOfStock } =
-    props;
+  const { currentCategory, categories, setCurrentCategory } = props;
 
   return (
     <ul className="sidebar">
