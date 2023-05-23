@@ -3,6 +3,7 @@
   height: 50vh;
   background-color: rgba(0, 0, 0, 0.712);
   border-radius: 1rem;
+  overflow: hidden;
 }
 
 .slide {
@@ -11,7 +12,7 @@
   bottom: 0;
   left: 50%;
   margin: auto;
-  max-width: 50vw;
+  /* max-width: 50vw; */
   max-height: 50vh;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
