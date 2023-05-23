@@ -13,6 +13,10 @@
   --scoreboard-color: rgb(0, 0, 0);
 }
 
+html {
+  font-size: 16px;
+}
+
 *,
 *::before,
 *::after {
@@ -89,16 +93,16 @@ button:not(:disabled):hover {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace; */
 }
 
 .App {
@@ -118,12 +122,17 @@ a:hover {
   text-decoration: underline;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
 nav {
   padding: var(--section-padding);
   background: var(--secondary-color);
   color: white;
   position: sticky;
   border-bottom: solid 4px black;
+  font-size: 1.5rem;
 }
 
 nav ul {
@@ -185,10 +194,12 @@ main h1 {
   border-radius: var(--border-radius-default);
 }
 
+.search-box,
 .sort-box,
 .outOfStock-box {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 input[type="search"] {
@@ -337,6 +348,7 @@ button.current-category {
 .product-text {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 .in-stock-container {
@@ -620,15 +632,20 @@ input[type="number"]:focus {
   }
 
   .product-detail {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
   }
 
   .product-detail > h1 {
-    grid-column: 1 / 3;
+    grid-column: 1 / 5;
+  }
+
+  .product-detail > img {
+    grid-column: 2 / 3;
   }
 
   .product-detail-content {
+    grid-column: 3 / 4;
     border: solid 2px black;
     border-radius: var(--border-radius-default);
     height: 100%;

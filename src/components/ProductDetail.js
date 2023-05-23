@@ -20,17 +20,21 @@ const ProductDetail = (props) => {
       <div className="product-detail-content">
         <p className="product-description">{productObj.description}</p>
         <strong className="dollar-sign">{productObj.price.toFixed(2)}</strong>
-        <div className="qty-container">
-          <label htmlFor="qty-input">Quantity: </label>
-          <input
-            type="number"
-            name="qty-input"
-            id="qty-input"
-            value={quantity > 0 ? quantity : 1}
-            min={1}
-            onChange={(e) => setQuantity(parseInt(e.target.value))}
-          />
-        </div>
+        {productObj.inStock ? (
+          <div className="qty-container">
+            <label htmlFor="qty-input">Quantity: </label>
+            <input
+              type="number"
+              name="qty-input"
+              id="qty-input"
+              value={quantity > 0 ? quantity : 1}
+              min={1}
+              onChange={(e) => setQuantity(parseInt(e.target.value))}
+            />
+          </div>
+        ) : (
+          <strong className="out-of-stock">OUT OF STOCK</strong>
+        )}
         <button
           className="add-to-cart-btn"
           type="button"

@@ -6,7 +6,7 @@ const SlideShow = (props) => {
   const { images, captions } = props;
   const interval = 5;
 
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(Math.floor(Math.random() * images.length)); // Random index so it doesn't start at the same image every time
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
