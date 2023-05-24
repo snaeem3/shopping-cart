@@ -12,6 +12,8 @@ import lifeImg from './images/product images/life-boxart.jpg';
 import cahImg from './images/product images/cah.png';
 import riskImg from './images/product images/risk-boxart.webp';
 import ticketToRideImg from './images/product images/Ticket to Ride-boxart.jpeg';
+import coupImg from './images/product images/coup-boxart.jpg';
+import carcassonneImg from './images/product images/Carcassonne-boxart.jpg';
 
 export const productData = [
   {
@@ -135,6 +137,24 @@ export const productData = [
       "Ticket to Ride is an exciting and engaging board game that takes players on a cross-country train adventure. In this strategic and competitive game, players compete to build train routes connecting various cities across the United States (or other regions depending on the edition). Collect colored train cards, claim routes, and complete destination tickets to earn points. With its accessible rules and captivating gameplay, Ticket to Ride is perfect for players of all ages and experience levels. Plan your routes wisely, thwart your opponents' plans, and race against time to become the most successful railroad tycoon. Whether you're a seasoned gamer or new to board games, Ticket to Ride promises hours of fun and strategic thinking. All aboard for an unforgettable journey of railways and rivalries!",
     inStock: true,
     imgSrc: ticketToRideImg,
+  },
+  {
+    name: 'Coup',
+    price: 13.99,
+    category: 'Social',
+    description:
+      "Coup is a thrilling and deceitful game of power and manipulation that will keep you on the edge of your seat. In this fast-paced game of bluffing and deduction, players assume the roles of influential figures in a dystopian society, vying for control and wealth. Each player possesses hidden character cards with unique abilities, and it's up to you to outsmart your opponents by using your abilities and bluffing your way to victory. Will you gather enough influence to overthrow your rivals, or will they expose your lies and eliminate you from the game? Gather your friends, sharpen your wits, and immerse yourself in the exhilarating world of Coup for a high-stakes battle of strategy and cunning.",
+    inStock: true,
+    imgSrc: coupImg,
+  },
+  {
+    name: 'Carcassonne',
+    price: 26,
+    category: 'Strategy',
+    description:
+      'Carcassonne is a captivating tile-placement game that allows players to create their own medieval landscapes. As builders and strategists, players take turns placing tiles featuring various terrains to construct cities, roads, fields, and monasteries. By strategically placing their meeples, players can claim these features and earn points. With each tile placement, the landscape expands, creating a unique and dynamic game board. Carcassonne is a game that balances careful planning, tactical decisions, and a touch of luck. It offers a delightful experience for both casual and seasoned gamers, encouraging creativity and fostering friendly competition.',
+    inStock: true,
+    imgSrc: carcassonneImg,
   },
 ];
 // consider sorting products into categories then list name, price, img
