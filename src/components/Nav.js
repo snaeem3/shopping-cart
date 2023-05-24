@@ -23,8 +23,8 @@ const Nav = (props) => {
             className="cart-btn cart-toggle"
             onClick={() => toggleCartView()}
           >
-            <img src={cartIcon} className=".icon" alt="cart icon" /> (
-            {numCartProducts})
+            <img src={cartIcon} className=".icon" alt="cart icon" />
+            <p className="num-products">({numCartProducts})</p>
           </button>
         </li>
       </ul>
