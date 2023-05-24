@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
-import '../styles/SlideShow.css'; // Assuming you have a CSS file for the slideshow styles
+import '../styles/SlideShow.css';
 
 const SlideShow = (props) => {
   const { images, captions } = props;
