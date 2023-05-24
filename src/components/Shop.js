@@ -38,7 +38,6 @@ const Shop = (props) => {
   };
 
   const handleSortChange = (event) => {
-    // let value = event.target.value;
     setSortMethod(event.target.value);
   };
 
@@ -53,7 +52,6 @@ const Shop = (props) => {
             <input
               type="search"
               id="search-bar"
-              // className="supporting-icon"
               name="search-bar"
               onChange={(e) => handleSearchChange(e)}
             />

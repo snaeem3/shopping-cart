@@ -24,7 +24,6 @@ export const productData = [
       'Settlers of Catan is a classic and beloved strategy game that transports players to the vibrant world of exploration and resource management. As settlers on the island of Catan, players compete to build and expand their settlements while trading and negotiating with one another. With a modular board that changes with each playthrough, no two games are the same. Use your wit and strategy to gather resources, build roads, cities, and developments, and strategically position yourself for victory. With its accessible gameplay and endless possibilities, Settlers of Catan is a must-have for both casual and experienced gamers looking for an immersive and engaging experience. Embark on an epic journey of discovery, trade, and conquest, and become the master of Catan!',
     inStock: true,
     imgSrc: catanImg,
-    // id: uniqid(),
   },
   {
     name: 'Pandemic',
@@ -34,7 +33,6 @@ export const productData = [
       'Pandemic is an intense and collaborative board game that puts players in the roles of disease-fighting specialists. As members of an elite team, players must work together to contain and eradicate deadly diseases threatening to spread across the globe. With each player possessing unique abilities, strategic planning and efficient resource management are key to success. Can you save humanity from the brink of devastation? Join forces and test your wits in this thrilling race against time in Pandemic, where teamwork is crucial and the fate of the world rests in your hands.',
     inStock: true,
     imgSrc: pandemicImg,
-    // id: uniqid(),
   },
   {
     name: 'Codenames',
@@ -44,7 +42,6 @@ export const productData = [
       'Codenames is a fast-paced and highly addictive word association game that will put your communication skills to the test. In this team-based game, players take on the roles of spymasters, providing one-word clues to help their teammates guess secret agent codenames on a grid of word cards. But be careful, as there are hidden assassins waiting to sabotage your mission! With its simple rules and endless replayability, Codenames is perfect for game nights and gatherings of all sizes. Challenge your friends to decipher the code and prove your mastery of deduction and wordplay. Get ready for a thrilling and brain-teasing adventure with Codenames!',
     inStock: true,
     imgSrc: codenamesImg,
-    // id: uniqid(),
   },
   {
     name: 'The Resistance',
@@ -54,7 +51,6 @@ export const productData = [
       'The Resistance is a gripping social deduction board game that pits players against each other in a battle between spies and resistance fighters. Set in a dystopian world where an oppressive regime holds sway, players must navigate a web of deceit and trust to determine who can be trusted and who is secretly working for the enemy. With hidden roles and secret missions, The Resistance challenges your ability to read others and make critical decisions. Can you uncover the spies and lead the resistance to victory, or will the agents of tyranny prevail?',
     inStock: false,
     imgSrc: resistanceImg,
-    // id: uniqid(),
   },
   {
     name: 'One Night Ultimate Werewolf',
@@ -64,7 +60,6 @@ export const productData = [
       'One Night Ultimate Werewolf is a thrilling and fast-paced social deduction game that will keep you on the edge of your seat. As the sun sets in the village, players are assigned secret roles as either innocent villagers or cunning werewolves. The twist? the game lasts only one night! Players must use their powers of persuasion, deduction, and deception to determine who is a werewolf and who is not. With unique abilities and ever-changing roles, each game is a unique and intense experience. Will the villagers discover the werewolves and eliminate them, or will the werewolves successfully deceive everyone and claim victory? Gather your friends, sharpen your instincts, and dive into the captivating world of One Night Ultimate Werewolf for an unforgettable gaming experience.',
     inStock: true,
     imgSrc: onuwImg,
-    // id: uniqid(),
   },
   {
     name: 'Monopoly',
