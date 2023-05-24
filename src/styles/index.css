@@ -158,12 +158,12 @@ nav ul {
   gap: 2rem;
 }
 
-nav a {
+nav ul a {
   padding: var(--section-padding);
   color: white;
 }
 
-nav a:hover {
+nav ul a:hover {
   background: grey;
 }
 

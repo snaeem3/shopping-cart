@@ -7,7 +7,9 @@ const Nav = (props) => {
 
   return (
     <nav>
-      <div className="logo-container" />
+      <Link to={homePath} className="logo-container">
+        {/* <div className="logo-container" /> */}
+      </Link>
       <ul>
         <li>
           <Link to={homePath}>Home</Link>
