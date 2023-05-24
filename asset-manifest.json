@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.1b2d6334.css",
+    "main.js": "/shopping-cart/static/js/main.5fca0e5e.js",
+    "static/js/787.d6fe38e8.chunk.js": "/shopping-cart/static/js/787.d6fe38e8.chunk.js",
+    "static/media/cah.png": "/shopping-cart/static/media/cah.7befe02e9dd72f20a3d1.png",
+    "static/media/coup-boxart.jpg": "/shopping-cart/static/media/coup-boxart.0f7931a64b93d9a85f72.jpg",
+    "static/media/life-boxart.jpg": "/shopping-cart/static/media/life-boxart.45491119a1548a4c64b0.jpg",
+    "static/media/codenames-boxart.jpg": "/shopping-cart/static/media/codenames-boxart.c151f23368248bcd0176.jpg",
+    "static/media/clue-boxart.webp": "/shopping-cart/static/media/clue-boxart.92d70819163d6732d4ff.webp",
+    "static/media/Carcassonne-boxart.jpg": "/shopping-cart/static/media/Carcassonne-boxart.bd8db47c5d6902a848e2.jpg",
+    "static/media/monopoly-boxart.jpg": "/shopping-cart/static/media/monopoly-boxart.3dee20ee0d03e225a6b8.jpg",
+    "static/media/resistance-boxart.jpg": "/shopping-cart/static/media/resistance-boxart.2f15ac41a295b36e85db.jpg",
+    "static/media/Catan-boxart.jpg": "/shopping-cart/static/media/Catan-boxart.428bea700b9aa2c1f56f.jpg",
+    "static/media/Pandemic-boxart.jpg": "/shopping-cart/static/media/Pandemic-boxart.cc3f411baca03d6792d9.jpg",
+    "static/media/onuw-boxart.jpg": "/shopping-cart/static/media/onuw-boxart.eec86fd5cf068d6162a4.jpg",
+    "static/media/Ticket to Ride-boxart.jpeg": "/shopping-cart/static/media/Ticket to Ride-boxart.b0fdbb267412fc7d715d.jpeg",
+    "static/media/risk-boxart.webp": "/shopping-cart/static/media/risk-boxart.db80a02b41f775f6beaf.webp",
+    "static/media/sorry-boxart.jpg": "/shopping-cart/static/media/sorry-boxart.1b7f9cb2bc00d2ebe759.jpg",
+    "static/media/scrabble-boxart.webp": "/shopping-cart/static/media/scrabble-boxart.0889b84f496304e38aef.webp",
+    "static/media/logo.svg": "/shopping-cart/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/shopping-cart/index.html",
+    "static/media/shopping_cart_FILL0_wght400_GRAD0_opsz48.svg": "/shopping-cart/static/media/shopping_cart_FILL0_wght400_GRAD0_opsz48.ea0823e018d26ac6f618cd841e7e9ec8.svg",
+    "static/media/github.svg": "/shopping-cart/static/media/github.9b9489c0e2327f30e86ee7e0b5f72f55.svg",
+    "static/media/payments_FILL0_wght400_GRAD0_opsz48.svg": "/shopping-cart/static/media/payments_FILL0_wght400_GRAD0_opsz48.38ea5a367282f6eab210.svg",
+    "static/media/search_FILL0_wght400_GRAD0_opsz48.svg": "/shopping-cart/static/media/search_FILL0_wght400_GRAD0_opsz48.04a90d8779e84aa2122a.svg",
+    "static/media/delete_FILL0_wght400_GRAD0_opsz48.svg": "/shopping-cart/static/media/delete_FILL0_wght400_GRAD0_opsz48.24315ab37634d58b5ce3.svg",
+    "static/media/close.svg": "/shopping-cart/static/media/close.c76ad28c33323dfe86ec1e4bcf9c5b6c.svg",
+    "static/media/add_FILL0_wght400_GRAD0_opsz48.svg": "/shopping-cart/static/media/add_FILL0_wght400_GRAD0_opsz48.c8b39a336d92d4c5c69f8493a4ff6af5.svg",
+    "static/media/remove_FILL0_wght400_GRAD0_opsz48.svg": "/shopping-cart/static/media/remove_FILL0_wght400_GRAD0_opsz48.bf60699d5d18b452d77986227b0ffa5f.svg",
+    "main.1b2d6334.css.map": "/shopping-cart/static/css/main.1b2d6334.css.map",
+    "main.5fca0e5e.js.map": "/shopping-cart/static/js/main.5fca0e5e.js.map",
+    "787.d6fe38e8.chunk.js.map": "/shopping-cart/static/js/787.d6fe38e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b2d6334.css",
+    "static/js/main.5fca0e5e.js"
+  ]
+}
