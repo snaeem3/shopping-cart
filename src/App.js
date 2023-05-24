@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  HashRouter,
+} from 'react-router-dom';
 import uniqid from 'uniqid';
 import { productData } from './productData';
 import logo from './logo.svg';
@@ -78,7 +84,7 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Helmet>
         <title>Board Game Hub</title>
       </Helmet>
@@ -119,7 +125,7 @@ const App = () => {
         </div>
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
