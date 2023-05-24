@@ -155,11 +155,10 @@ nav ul {
   list-style-type: none;
   justify-content: space-evenly;
   align-items: center;
-  gap: 2rem;
 }
 
 nav ul a {
-  padding: var(--section-padding);
+  padding: 0 var(--section-padding);
   color: white;
 }
 
@@ -490,7 +489,6 @@ button.current-category {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  width: 50%;
 }
 
 .subtract,

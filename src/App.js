@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import uniqid from 'uniqid';
 import { productData } from './productData';
@@ -78,6 +79,9 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <Helmet>
+        <title>Board Game Hub</title>
+      </Helmet>
       <div className="App">
         <Nav
           homePath="/"
