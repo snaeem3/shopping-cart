@@ -1,6 +1,6 @@
 # Shopping Cart
 
-This project showcases a mock shopping website built with React as part of the [Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-shopping-cart) Curriculum. Browse and shop through a variety of products, then view the total price of your items in the cart.
+This project showcases a mock shopping website built with React as part of the [Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart) Curriculum. Browse and shop through a variety of products, then view the total price of your items in the cart.
 
 ## [Live View](https://snaeem3.github.io/shopping-cart)
 ![shop-page](https://github.com/snaeem3/shopping-cart/assets/11710951/86a7b1bb-0688-4063-9c03-152f32c8333c)
